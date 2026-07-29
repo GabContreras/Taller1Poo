@@ -12,9 +12,73 @@ namespace TallerPractico1POO
 {
     public partial class Form1 : Form
     {
+
+        //lista para guardar los estudiantes que se creen
+        private List<Estudiante> listaEstudiantes = new List<Estudiante>();
+
         public Form1()
         {
             InitializeComponent();
+        }
+
+        // Método para limpiar los TextBox después de agregar
+        private void LimpiarCampos()
+        {
+            txtNombre.Clear();
+            txtCarnet.Clear();
+            txtCarrera.Clear();
+            txtPromedio.Clear();
+            txtNombre.Focus();
+        }
+        // Para actualizar el datagridview
+        private void MostrarTodos()
+        {
+            dgvEstudiantes.DataSource = null;
+            dgvEstudiantes.DataSource = listaEstudiantes;
+        }
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string nombre = txtNombre.Text.Trim();
+                string carnet = txtCarnet.Text.Trim();
+                string carrera = txtCarrera.Text.Trim();
+
+                //esto es mejor que utilizar "" ya que string.IsNullOrEmpty() verifica directamente si es nulo o está vacio, cosa que no pasa con
+                //"" que solo verifica si está vacio, pero no si es nulo
+                if (string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(carnet) || string.IsNullOrEmpty(carrera))
+                {
+                    MessageBox.Show("Completar todos los campos.", "Incompleto",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                double promedio = double.Parse(txtPromedio.Text.Trim());
+
+
+                if (promedio < 0 || promedio > 10)
+                {
+                    MessageBox.Show("El promedio debe estar entre 0 y 10.", "Inválido",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                //Agrega el/los estudiantes a la lista
+
+                Estudiante nuevoEstudiante = new Estudiante(nombre, carnet, carrera, promedio);
+                listaEstudiantes.Add(nuevoEstudiante);
+
+                MessageBox.Show("Estudiante agregado correctamente.", "Éxito",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                LimpiarCampos();
+                MostrarTodos(); 
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("El promedio debe ser un número válido. (del 0 al 10)", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
