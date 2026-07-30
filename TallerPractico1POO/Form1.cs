@@ -15,7 +15,8 @@ namespace TallerPractico1POO
 
         //lista para guardar los estudiantes que se creen
         private List<Estudiante> listaEstudiantes = new List<Estudiante>();
-
+        //lista para estudiantes destacados
+        private List<Estudiante> listaDestacados = new List<Estudiante>();
         public Form1()
         {
             InitializeComponent();
@@ -36,6 +37,28 @@ namespace TallerPractico1POO
             dgvEstudiantes.DataSource = null;
             dgvEstudiantes.DataSource = listaEstudiantes;
         }
+        // Para mostrar solo estudiantes destacados
+        private void MostrarDestacados()
+        {
+            dgvEstudiantes.DataSource = null;
+            dgvEstudiantes.DataSource = listaDestacados;
+        }
+
+        // Para obtener promedio general
+        private double PromedioGeneral()
+        {
+            if (listaEstudiantes.Count == 0) // Si la lista está vacía
+                return 0;
+            
+            return 0; 
+        }
+
+        // Eventos
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            lblPromedioGral.Enabled = false;
+        }
+
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             try
@@ -68,8 +91,14 @@ namespace TallerPractico1POO
                 Estudiante nuevoEstudiante = new Estudiante(nombre, carnet, carrera, promedio);
                 listaEstudiantes.Add(nuevoEstudiante);
 
+                //Agrega el/los estudiantes cuyo promedio es mayor a 8 la lista de destacados
+
+                if(promedio > 8)
+                    listaDestacados.Add(nuevoEstudiante);
+
                 MessageBox.Show("Estudiante agregado correctamente.", "Éxito",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
+
 
                 LimpiarCampos();
                 MostrarTodos(); 
@@ -80,5 +109,24 @@ namespace TallerPractico1POO
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btnDestacados_Click(object sender, EventArgs e)
+        {
+            MostrarDestacados();
+        }
+
+        private void btnMostrarTodos_Click(object sender, EventArgs e)
+        {
+            MostrarTodos();
+        }
+
+        private void btnPromedio_Click(object sender, EventArgs e)
+        {
+            MostrarTodos();
+            lblPromedioGral.Enabled = true;
+            lblPromedioGral.Text = "Promedio General: " + PromedioGeneral();
+        }
+
+        
     }
 }

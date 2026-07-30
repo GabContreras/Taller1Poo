@@ -38,10 +38,11 @@
             this.btnPromedio = new System.Windows.Forms.Button();
             this.lblResultado = new System.Windows.Forms.Label();
             this.dgvEstudiantes = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.lblCarnet = new System.Windows.Forms.Label();
+            this.lblCarrera = new System.Windows.Forms.Label();
+            this.lblPromedio = new System.Windows.Forms.Label();
+            this.lblPromedioGral = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstudiantes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,6 +92,7 @@
             this.btnMostrarTodos.TabIndex = 5;
             this.btnMostrarTodos.Text = "Mostrar Todos";
             this.btnMostrarTodos.UseVisualStyleBackColor = true;
+            this.btnMostrarTodos.Click += new System.EventHandler(this.btnMostrarTodos_Click);
             // 
             // btnDestacados
             // 
@@ -100,6 +102,7 @@
             this.btnDestacados.TabIndex = 6;
             this.btnDestacados.Text = "Destacados";
             this.btnDestacados.UseVisualStyleBackColor = true;
+            this.btnDestacados.Click += new System.EventHandler(this.btnDestacados_Click);
             // 
             // btnPromedio
             // 
@@ -109,6 +112,7 @@
             this.btnPromedio.TabIndex = 7;
             this.btnPromedio.Text = "Promedio General";
             this.btnPromedio.UseVisualStyleBackColor = true;
+            this.btnPromedio.Click += new System.EventHandler(this.btnPromedio_Click);
             // 
             // lblResultado
             // 
@@ -124,54 +128,64 @@
             this.dgvEstudiantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEstudiantes.Location = new System.Drawing.Point(505, 36);
             this.dgvEstudiantes.Name = "dgvEstudiantes";
-            this.dgvEstudiantes.Size = new System.Drawing.Size(300, 413);
+            this.dgvEstudiantes.Size = new System.Drawing.Size(300, 365);
             this.dgvEstudiantes.TabIndex = 9;
             // 
-            // label1
+            // lblNombre
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(42, 58);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 13);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Nombre:";
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Location = new System.Drawing.Point(42, 58);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(47, 13);
+            this.lblNombre.TabIndex = 10;
+            this.lblNombre.Text = "Nombre:";
             // 
-            // label2
+            // lblCarnet
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(42, 112);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 13);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "Carnet:";
+            this.lblCarnet.AutoSize = true;
+            this.lblCarnet.Location = new System.Drawing.Point(42, 112);
+            this.lblCarnet.Name = "lblCarnet";
+            this.lblCarnet.Size = new System.Drawing.Size(41, 13);
+            this.lblCarnet.TabIndex = 11;
+            this.lblCarnet.Text = "Carnet:";
             // 
-            // label3
+            // lblCarrera
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(42, 164);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(44, 13);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "Carrera:";
+            this.lblCarrera.AutoSize = true;
+            this.lblCarrera.Location = new System.Drawing.Point(42, 164);
+            this.lblCarrera.Name = "lblCarrera";
+            this.lblCarrera.Size = new System.Drawing.Size(44, 13);
+            this.lblCarrera.TabIndex = 12;
+            this.lblCarrera.Text = "Carrera:";
             // 
-            // label4
+            // lblPromedio
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(42, 213);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(54, 13);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "Promedio:";
+            this.lblPromedio.AutoSize = true;
+            this.lblPromedio.Location = new System.Drawing.Point(42, 213);
+            this.lblPromedio.Name = "lblPromedio";
+            this.lblPromedio.Size = new System.Drawing.Size(54, 13);
+            this.lblPromedio.TabIndex = 13;
+            this.lblPromedio.Text = "Promedio:";
+            // 
+            // lblPromedioGral
+            // 
+            this.lblPromedioGral.AutoSize = true;
+            this.lblPromedioGral.Location = new System.Drawing.Point(502, 416);
+            this.lblPromedioGral.Name = "lblPromedioGral";
+            this.lblPromedioGral.Size = new System.Drawing.Size(97, 13);
+            this.lblPromedioGral.TabIndex = 14;
+            this.lblPromedioGral.Text = "Promedio General: ";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblPromedioGral);
+            this.Controls.Add(this.lblPromedio);
+            this.Controls.Add(this.lblCarrera);
+            this.Controls.Add(this.lblCarnet);
+            this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.dgvEstudiantes);
             this.Controls.Add(this.lblResultado);
             this.Controls.Add(this.btnPromedio);
@@ -184,6 +198,7 @@
             this.Controls.Add(this.txtNombre);
             this.Name = "Form1";
             this.Text = "frmEstudiante";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstudiantes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -202,10 +217,11 @@
         private System.Windows.Forms.Button btnPromedio;
         private System.Windows.Forms.Label lblResultado;
         private System.Windows.Forms.DataGridView dgvEstudiantes;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.Label lblCarnet;
+        private System.Windows.Forms.Label lblCarrera;
+        private System.Windows.Forms.Label lblPromedio;
+        private System.Windows.Forms.Label lblPromedioGral;
     }
 }
 
