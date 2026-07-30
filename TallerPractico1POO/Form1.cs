@@ -44,19 +44,9 @@ namespace TallerPractico1POO
             dgvEstudiantes.DataSource = listaDestacados;
         }
 
-        // Para obtener promedio general
-        private double PromedioGeneral()
-        {
-            if (listaEstudiantes.Count == 0) // Si la lista está vacía
-                return 0;
-            
-            return 0; 
-        }
 
-        // Eventos
         private void Form1_Load(object sender, EventArgs e)
         {
-            lblPromedioGral.Enabled = false;
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -93,7 +83,7 @@ namespace TallerPractico1POO
 
                 //Agrega el/los estudiantes cuyo promedio es mayor a 8 la lista de destacados
 
-                if(promedio > 8)
+                if (promedio > 8)
                     listaDestacados.Add(nuevoEstudiante);
 
                 MessageBox.Show("Estudiante agregado correctamente.", "Éxito",
@@ -101,7 +91,7 @@ namespace TallerPractico1POO
 
 
                 LimpiarCampos();
-                MostrarTodos(); 
+                MostrarTodos();
             }
             catch (FormatException)
             {
@@ -113,6 +103,7 @@ namespace TallerPractico1POO
         private void btnDestacados_Click(object sender, EventArgs e)
         {
             MostrarDestacados();
+
         }
 
         private void btnMostrarTodos_Click(object sender, EventArgs e)
@@ -122,9 +113,16 @@ namespace TallerPractico1POO
 
         private void btnPromedio_Click(object sender, EventArgs e)
         {
-            MostrarTodos();
-            lblPromedioGral.Enabled = true;
-            lblPromedioGral.Text = "Promedio General: " + PromedioGeneral();
+            if (listaEstudiantes.Count == 0) //validamos que haya al menos un estudiante
+            {
+                lblResultado.Text = "No hay estudiantes registrados.";
+                return;
+            }
+
+            //llamamos al método estático de la clase Estudiante, mandándole la lista
+            double promedioGeneral = Estudiante.CalcularPromedioGeneral(listaEstudiantes);
+
+            lblResultado.Text = "Promedio general: " + promedioGeneral.ToString("F2");
         }
 
         

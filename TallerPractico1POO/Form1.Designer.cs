@@ -36,13 +36,13 @@
             this.btnMostrarTodos = new System.Windows.Forms.Button();
             this.btnDestacados = new System.Windows.Forms.Button();
             this.btnPromedio = new System.Windows.Forms.Button();
-            this.lblResultado = new System.Windows.Forms.Label();
+            this.lb1 = new System.Windows.Forms.Label();
             this.dgvEstudiantes = new System.Windows.Forms.DataGridView();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblCarnet = new System.Windows.Forms.Label();
             this.lblCarrera = new System.Windows.Forms.Label();
             this.lblPromedio = new System.Windows.Forms.Label();
-            this.lblPromedioGral = new System.Windows.Forms.Label();
+            this.lblResultado = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstudiantes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -114,14 +114,14 @@
             this.btnPromedio.UseVisualStyleBackColor = true;
             this.btnPromedio.Click += new System.EventHandler(this.btnPromedio_Click);
             // 
-            // lblResultado
+            // lb1
             // 
-            this.lblResultado.AutoSize = true;
-            this.lblResultado.Location = new System.Drawing.Point(623, 20);
-            this.lblResultado.Name = "lblResultado";
-            this.lblResultado.Size = new System.Drawing.Size(60, 13);
-            this.lblResultado.TabIndex = 8;
-            this.lblResultado.Text = "Resultados";
+            this.lb1.AutoSize = true;
+            this.lb1.Location = new System.Drawing.Point(623, 20);
+            this.lb1.Name = "lb1";
+            this.lb1.Size = new System.Drawing.Size(60, 13);
+            this.lb1.TabIndex = 8;
+            this.lb1.Text = "Resultados";
             // 
             // dgvEstudiantes
             // 
@@ -167,27 +167,27 @@
             this.lblPromedio.TabIndex = 13;
             this.lblPromedio.Text = "Promedio:";
             // 
-            // lblPromedioGral
+            // lblResultado
             // 
-            this.lblPromedioGral.AutoSize = true;
-            this.lblPromedioGral.Location = new System.Drawing.Point(502, 416);
-            this.lblPromedioGral.Name = "lblPromedioGral";
-            this.lblPromedioGral.Size = new System.Drawing.Size(97, 13);
-            this.lblPromedioGral.TabIndex = 14;
-            this.lblPromedioGral.Text = "Promedio General: ";
+            this.lblResultado.AutoSize = true;
+            this.lblResultado.Location = new System.Drawing.Point(502, 416);
+            this.lblResultado.Name = "lblResultado";
+            this.lblResultado.Size = new System.Drawing.Size(97, 13);
+            this.lblResultado.TabIndex = 15;
+            this.lblResultado.Text = "Promedio General: ";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.lblPromedioGral);
+            this.Controls.Add(this.lblResultado);
             this.Controls.Add(this.lblPromedio);
             this.Controls.Add(this.lblCarrera);
             this.Controls.Add(this.lblCarnet);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.dgvEstudiantes);
-            this.Controls.Add(this.lblResultado);
+            this.Controls.Add(this.lb1);
             this.Controls.Add(this.btnPromedio);
             this.Controls.Add(this.btnDestacados);
             this.Controls.Add(this.btnMostrarTodos);
@@ -215,13 +215,13 @@
         private System.Windows.Forms.Button btnMostrarTodos;
         private System.Windows.Forms.Button btnDestacados;
         private System.Windows.Forms.Button btnPromedio;
-        private System.Windows.Forms.Label lblResultado;
+        private System.Windows.Forms.Label lb1;
         private System.Windows.Forms.DataGridView dgvEstudiantes;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblCarnet;
         private System.Windows.Forms.Label lblCarrera;
         private System.Windows.Forms.Label lblPromedio;
-        private System.Windows.Forms.Label lblPromedioGral;
+        private System.Windows.Forms.Label lblResultado;
     }
 }
 
