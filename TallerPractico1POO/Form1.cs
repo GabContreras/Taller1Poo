@@ -47,9 +47,10 @@ namespace TallerPractico1POO
         // Para obtener promedio general
         private double PromedioGeneral()
         {
-            if (listaEstudiantes.Count == 0) //Promedio si la lista está vacía
+            if (listaEstudiantes.Count == 0) // Si la lista está vacía
                 return 0;
-            return 0;
+            
+            return 0; 
         }
 
         // Eventos
