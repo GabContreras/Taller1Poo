@@ -24,38 +24,15 @@ namespace TallerPractico1POO
             Promedio = promedio;
         }
 
-        //método estático que calcula el promedio general de una lista de estudiantes
-        public static double CalcularPromedioGeneral(List<Estudiante> estudiantes)
+        
+
+        //método que indica si el estudiante es destacado (promedio mayor a 8.0)
+        public bool EsDestacado()
         {
-            double suma = 0;
-
-            for (int i = 0; i < estudiantes.Count; i++) //recorre la lista completa
-            {
-                suma = suma + estudiantes[i].Promedio; //suma el promedio de cada estudiante
-            }
-
-            if (estudiantes.Count > 0)
-            {
-                return suma / estudiantes.Count;
-            }
+            if (Promedio > 8.0) //verifica si el promedio supera 8.0
+                return true;
             else
-            {
-                return 0;
-            }
-        }
-
-        //Filtra los estudiantes destacados (promedio mayor a 8.0)
-        //recibe dos listas: "destacados" es la que se va a llenar, "estudiantes" es la lista completa de donde se filtra
-        public static void ObtenerDestacados(List<Estudiante> destacados, List<Estudiante> estudiantes)
-        {
-            destacados.Clear(); //limpia la lista de destacados antes de volver a llenarla para evitar que se acumulen duplicados cada vez que se presiona el botón
-            for (int i = 0; i < estudiantes.Count; i++) 
-            {
-                if (estudiantes[i].Promedio > 8.0)
-                {
-                    destacados.Add(estudiantes[i]); //si cumple la condición, se agrega a la lista de destacados
-                }
-            }
+                return false;
         }
 
     }

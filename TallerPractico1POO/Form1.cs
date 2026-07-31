@@ -15,8 +15,7 @@ namespace TallerPractico1POO
 
         //lista para guardar los estudiantes que se creen
         private List<Estudiante> listaEstudiantes = new List<Estudiante>();
-        //lista para estudiantes destacados
-        private List<Estudiante> listaDestacados = new List<Estudiante>();
+      
         public Form1()
         {
             InitializeComponent();
@@ -89,12 +88,21 @@ namespace TallerPractico1POO
 
         private void btnDestacados_Click(object sender, EventArgs e)
         {
-            //llama al método estático de Estudiante, pasándole ambas listas
-            //listaDestacados se llena/actualiza dentro del método 
-            //listaEstudiantes es la lista completa que se usa para filtrar 
-            Estudiante.ObtenerDestacados(listaDestacados, listaEstudiantes);
+            //lista temporal para guardar solo los estudiantes destacados
+            //se crea nueva cada vez que se presiona el botón, para no arrastrar datos de clics anteriores
+            List<Estudiante> destacados = new List<Estudiante>();
+
+            for (int i = 0; i < listaEstudiantes.Count; i++)
+            {
+                if (listaEstudiantes[i].EsDestacado()) //Se evalua si cada estudiante es destacado o no
+                                                     
+                {
+                    destacados.Add(listaEstudiantes[i]); //si cumple la condición, se agrega a la lista temporal
+                }
+            }
+
             dgvEstudiantes.DataSource = null;
-            dgvEstudiantes.DataSource = listaDestacados;
+            dgvEstudiantes.DataSource = destacados; 
         }
 
         private void btnMostrarTodos_Click(object sender, EventArgs e)
@@ -104,16 +112,22 @@ namespace TallerPractico1POO
 
         private void btnPromedio_Click(object sender, EventArgs e)
         {
-            if (listaEstudiantes.Count == 0) //validamos que haya al menos un estudiante
+            if (listaEstudiantes.Count == 0) //valida que haya al menos un estudiante registrado
             {
                 lblResultado.Text = "No hay estudiantes registrados.";
                 return;
             }
 
-            //llama al método estático de la clase Estudiante, mandándole la lista
-            double promedioGeneral = Estudiante.CalcularPromedioGeneral(listaEstudiantes);
+            double suma = 0; //acumulador de promedios
 
-            lblResultado.Text = "Promedio general: " + promedioGeneral.ToString("F2");
+            for (int i = 0; i < listaEstudiantes.Count; i++) //recorre toda la lista de estudiantes
+            {
+                suma = suma + listaEstudiantes[i].Promedio; //suma el promedio de cada estudiante
+            }
+
+            double promedioGeneral = suma / listaEstudiantes.Count; //divide entre la cantidad total de estudiantes
+
+            lblResultado.Text = "Promedio general: " + promedioGeneral.ToString("F2"); //se muestra el resultado con 2 decimales
         }
 
     }
