@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace TallerPractico1POO
 {
-    public partial class Form1 : Form
+    public partial class Form1 : MaterialSkin.Controls.MaterialForm
     {
 
         //lista para guardar los estudiantes que se creen
@@ -125,6 +125,5 @@ namespace TallerPractico1POO
             lblResultado.Text = "Promedio general: " + promedioGeneral.ToString("F2");
         }
 
-        
     }
 }
