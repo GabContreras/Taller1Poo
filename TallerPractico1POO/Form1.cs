@@ -51,54 +51,61 @@ namespace TallerPractico1POO
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            try
+            //Trim quita espacios en blanco al inicio/final
+
+            string nombre = txtNombre.Text.Trim();
+            string carnet = txtCarnet.Text.Trim();
+            string carrera = txtCarrera.Text.Trim();
+
+            //esto es mejor que utilizar "" ya que string.IsNullOrEmpty() verifica directamente si es nulo o está vacio, cosa que no pasa con
+            //"" que solo verifica si está vacio, pero no si es nulo
+            if (string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(carnet) || string.IsNullOrEmpty(carrera))
             {
-                string nombre = txtNombre.Text.Trim();
-                string carnet = txtCarnet.Text.Trim();
-                string carrera = txtCarrera.Text.Trim();
-
-                //esto es mejor que utilizar "" ya que string.IsNullOrEmpty() verifica directamente si es nulo o está vacio, cosa que no pasa con
-                //"" que solo verifica si está vacio, pero no si es nulo
-                if (string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(carnet) || string.IsNullOrEmpty(carrera))
-                {
-                    MessageBox.Show("Completar todos los campos.", "Incompleto",
-                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-
-                double promedio = double.Parse(txtPromedio.Text.Trim());
-
-
-                if (promedio < 0 || promedio > 10)
-                {
-                    MessageBox.Show("El promedio debe estar entre 0 y 10.", "Inválido",
-                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-
-                //Agrega el/los estudiantes a la lista
-
-                Estudiante nuevoEstudiante = new Estudiante(nombre, carnet, carrera, promedio);
-                listaEstudiantes.Add(nuevoEstudiante);
-
-                //Agrega el/los estudiantes cuyo promedio es mayor a 8 la lista de destacados
-
-                if (promedio > 8)
-                    listaDestacados.Add(nuevoEstudiante);
-
-                MessageBox.Show("Estudiante agregado correctamente.", "Éxito",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-
-                LimpiarCampos();
-                MostrarTodos();
+                MessageBox.Show("Completar todos los campos.", "Incompleto",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
-            catch (FormatException)
+
+            // TryParse intenta convertir el texto a double SIN lanzar excepción si falla.
+            // Devuelve true/false según si la conversión fue exitosa, y guarda el resultado en "promedio" (parámetro out).
+            // Si el texto no es un número válido (vacío, letras, etc.), TryParse devuelve false,
+            // se muestra el error y se corta la ejecución con return.
+
+            if (!double.TryParse(txtPromedio.Text.Trim(), out double promedio))
             {
                 MessageBox.Show("El promedio debe ser un número válido. (del 0 al 10)", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
+
+            if (promedio < 0 || promedio > 10)
+            {
+                MessageBox.Show("El promedio debe estar entre 0 y 10.", "Inválido",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            //Agrega el/los estudiantes a la lista
+
+            Estudiante nuevoEstudiante = new Estudiante(nombre, carnet, carrera, promedio);
+            listaEstudiantes.Add(nuevoEstudiante);
+
+            //Agrega el/los estudiantes cuyo promedio es mayor a 8 la lista de destacados
+
+            if (promedio > 8)
+                listaDestacados.Add(nuevoEstudiante);
+
+            MessageBox.Show("Estudiante agregado correctamente.", "Éxito",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+            LimpiarCampos();
+            MostrarTodos();
         }
+
+
+
+
 
         private void btnDestacados_Click(object sender, EventArgs e)
         {
