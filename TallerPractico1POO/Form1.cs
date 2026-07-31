@@ -89,6 +89,9 @@ namespace TallerPractico1POO
 
         private void btnDestacados_Click(object sender, EventArgs e)
         {
+            //llama al método estático de Estudiante, pasándole ambas listas
+            //listaDestacados se llena/actualiza dentro del método 
+            //listaEstudiantes es la lista completa que se usa para filtrar 
             Estudiante.ObtenerDestacados(listaDestacados, listaEstudiantes);
             dgvEstudiantes.DataSource = null;
             dgvEstudiantes.DataSource = listaDestacados;
@@ -107,7 +110,7 @@ namespace TallerPractico1POO
                 return;
             }
 
-            //llamamos al método estático de la clase Estudiante, mandándole la lista
+            //llama al método estático de la clase Estudiante, mandándole la lista
             double promedioGeneral = Estudiante.CalcularPromedioGeneral(listaEstudiantes);
 
             lblResultado.Text = "Promedio general: " + promedioGeneral.ToString("F2");
