@@ -48,44 +48,39 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(168, 105);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNombre.Location = new System.Drawing.Point(126, 85);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(384, 22);
+            this.txtNombre.Size = new System.Drawing.Size(289, 20);
             this.txtNombre.TabIndex = 0;
             // 
             // txtCarnet
             // 
-            this.txtCarnet.Location = new System.Drawing.Point(168, 169);
-            this.txtCarnet.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCarnet.Location = new System.Drawing.Point(126, 137);
             this.txtCarnet.Name = "txtCarnet";
-            this.txtCarnet.Size = new System.Drawing.Size(384, 22);
+            this.txtCarnet.Size = new System.Drawing.Size(289, 20);
             this.txtCarnet.TabIndex = 1;
             // 
             // txtCarrera
             // 
-            this.txtCarrera.Location = new System.Drawing.Point(168, 222);
-            this.txtCarrera.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCarrera.Location = new System.Drawing.Point(126, 180);
             this.txtCarrera.Name = "txtCarrera";
-            this.txtCarrera.Size = new System.Drawing.Size(384, 22);
+            this.txtCarrera.Size = new System.Drawing.Size(289, 20);
             this.txtCarrera.TabIndex = 2;
             // 
             // txtPromedio
             // 
-            this.txtPromedio.Location = new System.Drawing.Point(168, 280);
-            this.txtPromedio.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPromedio.Location = new System.Drawing.Point(126, 228);
             this.txtPromedio.Name = "txtPromedio";
-            this.txtPromedio.Size = new System.Drawing.Size(384, 22);
+            this.txtPromedio.Size = new System.Drawing.Size(289, 20);
             this.txtPromedio.TabIndex = 3;
             // 
             // dgvEstudiantes
             // 
             this.dgvEstudiantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEstudiantes.Location = new System.Drawing.Point(605, 79);
-            this.dgvEstudiantes.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvEstudiantes.Location = new System.Drawing.Point(454, 64);
             this.dgvEstudiantes.Name = "dgvEstudiantes";
             this.dgvEstudiantes.RowHeadersWidth = 51;
-            this.dgvEstudiantes.Size = new System.Drawing.Size(644, 449);
+            this.dgvEstudiantes.Size = new System.Drawing.Size(483, 365);
             this.dgvEstudiantes.TabIndex = 9;
             // 
             // lblNombre
@@ -94,21 +89,23 @@
             this.lblNombre.Depth = 0;
             this.lblNombre.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblNombre.Location = new System.Drawing.Point(46, 103);
+            this.lblNombre.Location = new System.Drawing.Point(34, 84);
+            this.lblNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombre.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(84, 24);
+            this.lblNombre.Size = new System.Drawing.Size(67, 19);
             this.lblNombre.TabIndex = 16;
             this.lblNombre.Text = "Nombre:";
             // 
             // btnAgregar
             // 
             this.btnAgregar.Depth = 0;
-            this.btnAgregar.Location = new System.Drawing.Point(54, 380);
+            this.btnAgregar.Location = new System.Drawing.Point(126, 306);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Primary = true;
-            this.btnAgregar.Size = new System.Drawing.Size(90, 23);
+            this.btnAgregar.Size = new System.Drawing.Size(121, 19);
             this.btnAgregar.TabIndex = 17;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
@@ -117,11 +114,12 @@
             // btnMostrarTodos
             // 
             this.btnMostrarTodos.Depth = 0;
-            this.btnMostrarTodos.Location = new System.Drawing.Point(168, 380);
+            this.btnMostrarTodos.Location = new System.Drawing.Point(264, 306);
+            this.btnMostrarTodos.Margin = new System.Windows.Forms.Padding(2);
             this.btnMostrarTodos.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnMostrarTodos.Name = "btnMostrarTodos";
             this.btnMostrarTodos.Primary = true;
-            this.btnMostrarTodos.Size = new System.Drawing.Size(161, 23);
+            this.btnMostrarTodos.Size = new System.Drawing.Size(151, 19);
             this.btnMostrarTodos.TabIndex = 18;
             this.btnMostrarTodos.Text = "Mostrar todos";
             this.btnMostrarTodos.UseVisualStyleBackColor = true;
@@ -130,11 +128,12 @@
             // btnDestacados
             // 
             this.btnDestacados.Depth = 0;
-            this.btnDestacados.Location = new System.Drawing.Point(54, 430);
+            this.btnDestacados.Location = new System.Drawing.Point(126, 346);
+            this.btnDestacados.Margin = new System.Windows.Forms.Padding(2);
             this.btnDestacados.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnDestacados.Name = "btnDestacados";
             this.btnDestacados.Primary = true;
-            this.btnDestacados.Size = new System.Drawing.Size(161, 23);
+            this.btnDestacados.Size = new System.Drawing.Size(121, 19);
             this.btnDestacados.TabIndex = 19;
             this.btnDestacados.Text = "Destacados";
             this.btnDestacados.UseVisualStyleBackColor = true;
@@ -143,11 +142,12 @@
             // btnPromedio
             // 
             this.btnPromedio.Depth = 0;
-            this.btnPromedio.Location = new System.Drawing.Point(238, 430);
+            this.btnPromedio.Location = new System.Drawing.Point(264, 346);
+            this.btnPromedio.Margin = new System.Windows.Forms.Padding(2);
             this.btnPromedio.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnPromedio.Name = "btnPromedio";
             this.btnPromedio.Primary = true;
-            this.btnPromedio.Size = new System.Drawing.Size(185, 23);
+            this.btnPromedio.Size = new System.Drawing.Size(151, 19);
             this.btnPromedio.TabIndex = 20;
             this.btnPromedio.Text = "Promedio General";
             this.btnPromedio.UseVisualStyleBackColor = true;
@@ -159,10 +159,11 @@
             this.lblCarnet.Depth = 0;
             this.lblCarnet.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblCarnet.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblCarnet.Location = new System.Drawing.Point(46, 167);
+            this.lblCarnet.Location = new System.Drawing.Point(34, 136);
+            this.lblCarnet.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCarnet.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblCarnet.Name = "lblCarnet";
-            this.lblCarnet.Size = new System.Drawing.Size(69, 24);
+            this.lblCarnet.Size = new System.Drawing.Size(57, 19);
             this.lblCarnet.TabIndex = 21;
             this.lblCarnet.Text = "Carnet:";
             // 
@@ -172,10 +173,11 @@
             this.lblCarrera.Depth = 0;
             this.lblCarrera.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblCarrera.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblCarrera.Location = new System.Drawing.Point(46, 220);
+            this.lblCarrera.Location = new System.Drawing.Point(34, 179);
+            this.lblCarrera.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCarrera.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblCarrera.Name = "lblCarrera";
-            this.lblCarrera.Size = new System.Drawing.Size(75, 24);
+            this.lblCarrera.Size = new System.Drawing.Size(62, 19);
             this.lblCarrera.TabIndex = 22;
             this.lblCarrera.Text = "Carrera:";
             // 
@@ -185,10 +187,11 @@
             this.lblPromedio.Depth = 0;
             this.lblPromedio.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblPromedio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblPromedio.Location = new System.Drawing.Point(46, 280);
+            this.lblPromedio.Location = new System.Drawing.Point(34, 228);
+            this.lblPromedio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPromedio.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblPromedio.Name = "lblPromedio";
-            this.lblPromedio.Size = new System.Drawing.Size(98, 24);
+            this.lblPromedio.Size = new System.Drawing.Size(78, 19);
             this.lblPromedio.TabIndex = 23;
             this.lblPromedio.Text = "Promedio:";
             // 
@@ -198,10 +201,11 @@
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(601, 36);
+            this.materialLabel1.Location = new System.Drawing.Point(451, 33);
+            this.materialLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(95, 24);
+            this.materialLabel1.Size = new System.Drawing.Size(76, 19);
             this.materialLabel1.TabIndex = 24;
             this.materialLabel1.Text = "Resultado";
             // 
@@ -211,18 +215,19 @@
             this.lblResultado.Depth = 0;
             this.lblResultado.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblResultado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblResultado.Location = new System.Drawing.Point(601, 548);
+            this.lblResultado.Location = new System.Drawing.Point(451, 445);
+            this.lblResultado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblResultado.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblResultado.Name = "lblResultado";
-            this.lblResultado.Size = new System.Drawing.Size(170, 24);
+            this.lblResultado.Size = new System.Drawing.Size(135, 19);
             this.lblResultado.TabIndex = 25;
             this.lblResultado.Text = "Promedio general: ";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1281, 609);
+            this.ClientSize = new System.Drawing.Size(961, 495);
             this.Controls.Add(this.lblResultado);
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.lblPromedio);
@@ -238,10 +243,8 @@
             this.Controls.Add(this.txtCarrera);
             this.Controls.Add(this.txtCarnet);
             this.Controls.Add(this.txtNombre);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Estudiante";
-            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstudiantes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

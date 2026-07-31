@@ -37,17 +37,6 @@ namespace TallerPractico1POO
             dgvEstudiantes.DataSource = null;
             dgvEstudiantes.DataSource = listaEstudiantes;
         }
-        // Para mostrar solo estudiantes destacados
-        private void MostrarDestacados()
-        {
-            dgvEstudiantes.DataSource = null;
-            dgvEstudiantes.DataSource = listaDestacados;
-        }
-
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-        }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
@@ -90,11 +79,6 @@ namespace TallerPractico1POO
             Estudiante nuevoEstudiante = new Estudiante(nombre, carnet, carrera, promedio);
             listaEstudiantes.Add(nuevoEstudiante);
 
-            //Agrega el/los estudiantes cuyo promedio es mayor a 8 la lista de destacados
-
-            if (promedio > 8)
-                listaDestacados.Add(nuevoEstudiante);
-
             MessageBox.Show("Estudiante agregado correctamente.", "Éxito",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -103,14 +87,11 @@ namespace TallerPractico1POO
             MostrarTodos();
         }
 
-
-
-
-
         private void btnDestacados_Click(object sender, EventArgs e)
         {
-            MostrarDestacados();
-
+            Estudiante.ObtenerDestacados(listaDestacados, listaEstudiantes);
+            dgvEstudiantes.DataSource = null;
+            dgvEstudiantes.DataSource = listaDestacados;
         }
 
         private void btnMostrarTodos_Click(object sender, EventArgs e)
