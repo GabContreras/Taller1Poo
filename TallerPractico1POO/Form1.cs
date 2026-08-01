@@ -40,13 +40,13 @@ namespace TallerPractico1POO
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             //Trim quita espacios en blanco al inicio/final
+
             string nombre = txtNombre.Text.Trim();
             string carnet = txtCarnet.Text.Trim();
             string carrera = txtCarrera.Text.Trim();
 
-            //Chequeo rápido de campos vacíos ANTES de intentar convertir el promedio, validación de seguridad en Estudiante.
-            //string.IsNullOrEmpty() verifica directamente si es nulo o está vacio, cosa que no pasa con
-            //"" que solo verifica si está vacio, pero no si es nulo.
+            //esto es mejor que utilizar "" ya que string.IsNullOrEmpty() verifica directamente si es nulo o está vacio, cosa que no pasa con
+            //"" que solo verifica si está vacio, pero no si es nulo
             if (string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(carnet) || string.IsNullOrEmpty(carrera))
             {
                 MessageBox.Show("Completar todos los campos.", "Incompleto",
@@ -58,6 +58,7 @@ namespace TallerPractico1POO
             // Devuelve true/false según si la conversión fue exitosa, y guarda el resultado en "promedio" (parámetro out).
             // Si el texto no es un número válido (vacío, letras, etc.), TryParse devuelve false,
             // se muestra el error y se corta la ejecución con return.
+
             if (!double.TryParse(txtPromedio.Text.Trim(), out double promedio))
             {
                 MessageBox.Show("El promedio debe ser un número válido. (del 0 al 10)", "Error",
@@ -65,24 +66,22 @@ namespace TallerPractico1POO
                 return;
             }
 
-            //Las validaciones de campos vacíos y rango del promedio ahora están encapsuladas
-            //en la clase Estudiante (se ejecutan al asignar sus propiedades). Si algo no es
-            //válido, el constructor lanza una ArgumentException con el mensaje correspondiente.
-            try
+            if (promedio < 0 || promedio > 10)
             {
-                Estudiante nuevoEstudiante = new Estudiante(nombre, carnet, carrera, promedio);
-                listaEstudiantes.Add(nuevoEstudiante);
-                MessageBox.Show("Estudiante agregado correctamente.", "Éxito",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LimpiarCampos();
-                MostrarTodos();
-            }
-            catch (ArgumentException ex)
-            {
-                //Captura y muestra el mensaje de validación lanzado desde Estudiante
-                MessageBox.Show(ex.Message, "Datos inválidos",
+                MessageBox.Show("El promedio debe estar entre 0 y 10.", "Inválido",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
+
+            //Agrega el/los estudiantes a la lista
+
+            Estudiante nuevoEstudiante = new Estudiante(nombre, carnet, carrera, promedio);
+            listaEstudiantes.Add(nuevoEstudiante);
+
+            MessageBox.Show("Estudiante agregado correctamente.", "Éxito",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
             LimpiarCampos();
             MostrarTodos();
         }
