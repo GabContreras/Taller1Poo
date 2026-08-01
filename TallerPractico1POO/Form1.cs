@@ -60,8 +60,8 @@ namespace TallerPractico1POO
             // se muestra el error y se corta la ejecución con return.
             if (!double.TryParse(txtPromedio.Text.Trim(), out double promedio))
             {
-                MessageBox.Show("El promedio debe ser un número válido. (del 0 al 10)", "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("El promedio debe ser un número válido (del 0 al 10).", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -83,8 +83,6 @@ namespace TallerPractico1POO
                 MessageBox.Show(ex.Message, "Datos inválidos",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            LimpiarCampos();
-            MostrarTodos();
         }
 
         private void btnDestacados_Click(object sender, EventArgs e)
